@@ -1,20 +1,74 @@
+/* Reset some basic styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 50px;
+    background-color: #937897;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
+/* Container styling */
 .container {
-    max-width: 300px;
-    margin: auto;
+    width: 300px;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    border: 1px solid #904242;
+    border-radius: 6px;
+    background-color: rgba(74, 131, 165, 0.8);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-input, select, button {
+/* Heading */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+/* Label styling */
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Input and select fields */
+input[type="number"],
+select {
     width: 100%;
-    margin: 10px 0;
     padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Button styling */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #56a071;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #e0e0e0;
+}
+
+/* Result paragraph */
+#result {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
 }

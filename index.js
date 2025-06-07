@@ -1,25 +1,20 @@
-function converter() {
+const currencies = {
+    USD: 1.0,
+    JPY: 113.5,
+    EUR: 0.89,
+    RUB: 74.36,
+    GBP: 0.75
+};
 
-    const input = require('sync-input')
-    console.log("Welcome to Currency Converter!")
+function convert() {
+    let currencyFrom = document.getElementById("currencyFrom").value.toUpperCase();
+    let currencyTo = document.getElementById("currencyTo").value.toUpperCase();
+    let amount = Number(document.getElementById("amount").value);
 
-    const currencies = {
-        USD: 1.0,
-        JPY: 113.5,
-        EUR: 0.89,
-        RUB: 74.36,
-        GBP: 0.75
-    }
-
-    let currency_from = (input("What do you want to convert from: ")).toUpperCase()
-    let currency_to = (input("What do you want to convert to: ")).toUpperCase()
-    let amount = Number(input("Enter the amount: "))
-    if (currencies[currency_to] && currencies[currency_from] ){
-        var conv = (amount * currencies[currency_to])/currencies[currency_from]
+    if (currencies[currencyTo] && currencies[currencyFrom]) {
+        let conv = (amount * currencies[currencyTo]) / currencies[currencyFrom];
+        document.getElementById("result").innerText = `Converted Amount: ${conv.toFixed(2)}`;
     } else {
-        console.log("Currency not found!")
+        document.getElementById("result").innerText = "Currency not found!";
     }
-    console.log(`Amount: ${conv}`)
 }
-
-converter()
